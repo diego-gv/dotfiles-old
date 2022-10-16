@@ -1,73 +1,32 @@
-# [diego-gv][profile]’s dotfiles
+# diego-gv's dotfiles
 
-These are the base dotfiles that I start with when I set up
-a new environment (for more specific local needs I use the
-[`*.local`](#local-settings) files).
+[![Build Status](https://github.com/diego-gv/dotfiles/actions/workflows/test.yaml/badge.svg)](https://github.com/diego-gv/dotfiles/actions/workflows/test.yaml)
 
-## Local Settings
+## Original project
+https://github.com/georgijd/dotfiles
 
-The dotfiles can be easily extended to suit additional local
-requirements by using the following files:
+## How to install
 
-### `~/.bash.local`
-
-The `~/.bash.local` file will be automatically sourced after all
-the other [Bash related files][shell], thus, allowing its content
-to add to or overwrite the existing aliases, settings, `PATH`, etc.
-
-Here is an example:
-
-```shell
-#!/bin/bash
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-# Set PATH additions.
-
-PATH="/Users/alrra/projects/dotfiles/src/bin/:$PATH"
-
-export PATH
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-# Set local aliases.
-
-alias g="git"
+```bash
+git clone https://github.com/diego-gv/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+make
 ```
 
-### `~/.gitconfig.local`
+> For more information run `make help`
 
-The `~/.gitconfig.local` file will be automatically included after
-the configurations from `~/.gitconfig`, thus, allowing its content
-to overwrite or add to the existing Git configurations.
+## Useful Links
 
-__Note:__ Use `~/.gitconfig.local` to store sensitive information
-such as the Git user credentials, e.g.:
+- [ohmyzsh] Oh My Zsh is an open source, community-driven
+framework for managing your zsh configuration.
+- [powerlevel10k] Powerlevel10k is a theme for Zsh. It emphasizes speed,
+flexibility and out-of-the-box experience.
+- [fzf] A command-line fuzzy finder
+- [bat] A cat(1) clone with wings.
+- [lsd] The next gen ls command
 
-```gitconfig
-[commit]
-
-    # Sign commits using GPG.
-    # https://help.github.com/articles/signing-commits-using-gpg/
-
-    gpgSign = true
-
-[user]
-
-    name = Your Name
-    email = account@example.com
-    signingKey = XXXXXXXX
-```
-
-## Credits
-
-These dotfiles are based on the [Cătălin's dotfiles][alrra-credit]. The installation scripts and OS duality system have been passed in their repository.
-
-## License
-
-The code is available under the [MIT license][license].
-
-<!-- Link labels: -->
-[profile]: https://github.com/diego-gv
-[alrra-credit]: https://github.com/alrra/dotfiles/tree/main
-[license]: LICENSE
+[ohmyzsh]: https://github.com/ohmyzsh/ohmyzsh "Oh My Zsh"
+[powerlevel10k]: https://github.com/romkatv/powerlevel10k "Powerlevel10k"
+[fzf]: https://github.com/junegunn/fzf "FZF"
+[bat]: https://github.com/sharkdp/bat "Bat"
+[lsd]: https://github.com/Peltoche/lsd "lsd"

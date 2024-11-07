@@ -5,9 +5,9 @@ format = """
 $shell\ 
 $os\
 $username\
-[](bg:green fg:#9A348E)\
+[](fg:#9A348E bg:green)\
 $battery\
-[](bg:#DA627D fg:green)\
+[](fg:green bg:#DA627D)\
 $directory\
 [](fg:#DA627D bg:#FCA17D)\
 $git_branch\
@@ -21,7 +21,9 @@ $python\
 $cmd_duration\
 $jobs\
 $time\
-[ ](fg:#33658A)\
+[](fg:#33658A bg:#384d54)\
+$container\
+[ ](fg:#384d54)\
 """
 
 # Battery alarm
@@ -75,6 +77,13 @@ truncate_to_repo = false
 "Pictures" = ""
 "workspace" = ""
 "personal" = ""
+
+[container]
+symbol = ""
+style = "bg:#384d54 bold"
+format = '[ $symbol $name ]($style)'
+disabled = false
+
 
 # Git configuration
 # ----------------------------

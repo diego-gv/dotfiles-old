@@ -102,8 +102,16 @@ zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w 
 # disable highlighting of pasted text
 zle_highlight=('paste:none')
 
+# virtualenvs
+export WORKON_HOME=$HOME/.virtualenvs
+source $HOME/.local/bin/virtualenvwrapper.sh
+
 # Reload the completions (uncomment if zsh-completions don't work)
 # autoload -U compinit && compinit
 
 export STARSHIP_CONFIG="${HOME}/.config/starship/starship.toml"
 eval "$(starship init zsh)"
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

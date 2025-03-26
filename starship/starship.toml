@@ -2,7 +2,7 @@
 # ----------------------------
 format = """
 [](#9A348E)\
-$shell\ 
+$shell\
 $os\
 $username\
 [](fg:#9A348E bg:green)\
@@ -116,7 +116,7 @@ format = '[\($state( $progress_current/$progress_total)\) ]($style)'
 [python]
 symbol = "󰌠 "
 style = "bg:#30C391"
-format = "[ $symbol($version) ]($style)"
+format = "[ $symbol($version \\($virtualenv\\)) ]($style)"
 python_binary = ['./venv/bin/python', 'python', 'python3', 'python2']
 detect_files = []
 detect_extensions = []

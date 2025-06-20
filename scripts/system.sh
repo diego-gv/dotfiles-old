@@ -18,45 +18,37 @@ do_install() {
 		curl
 		fontconfig
 		git
-		bashtop
 		vim
 		wget
 		zsh
+		fzf
 	)
-	
-	if ! is_wsl ; then
-		packages+=(
-			flameshot
-			diodon
-			timeshift
-			gnome-tweaks
-			gnome-shell-extension-manager
-		)
-	fi
+
+	packages+=(
+		flameshot
+		diodon
+		timeshift
+		gnome-tweaks
+		gnome-shell-extension-manager
+	)
 
 	info "[system] Install packages"
 	info "[system][apt] Add ppa repositories"
 	export DEBIAN_FRONTEND=noninteractive
 	sudo apt-add-repository -y ppa:git-core/ppa	# git repository
-	
-	if ! is_wsl ; then
-		sudo apt-add-repository -y ppa:diodon-team/stable	# diodon repository
-	fi
-
+	sudo apt-add-repository -y ppa:diodon-team/stable	# diodon repository
 	sudo apt-get update -qq
+
 	info "[system][apt] Install apt packages"
 	sudo apt-get install -qq -y "${packages[@]}"
 
-	
-	if ! is_wsl ; then
-		info "[system][snap] Install snap packages"
-		sudo snap install --classic code
-		sudo snap install --classic code-insiders
-		sudo snap install postman
-		sudo snap install spotify
-		sudo snap install dbeaver-ce
-		sudo snap install brave
-	fi
+	info "[system][snap] Install snap packages"
+	sudo snap install --classic code
+	sudo snap install --classic code-insiders
+	sudo snap install --classic obsidian
+	sudo snap install postman
+	sudo snap install spotify
+	sudo snap install dbeaver-ce
 }
 
 do_configure() {
@@ -90,11 +82,6 @@ do_configure() {
 
 do_reboot() {
 	info "[system] Reboot"
-	if is_wsl ; then
-		info "[system][reboot] Restart the WSL environment to apply all changes"
-		return
-	fi
-
 	while true; do
 		read -p "[system][reboot] Do you want to reboot the system to apply all changes? [Y/n] " action
 		action=${action:-Y}

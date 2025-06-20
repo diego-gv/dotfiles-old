@@ -39,10 +39,7 @@ starship-configure:
 
 ##@ Tools
 tools: fzf lsd bat ## Setup other tools (like FZF, lsd or bat)
-fzf: fzf-install fzf-configure ## ├ Install and configure FZF
-fzf-install: 
-	@./scripts/fzf.sh install
-fzf-configure:
+fzf: ## ├ Install and configure FZF
 	@./scripts/fzf.sh configure
 lsd: ## ├ Install lsd
 	@./scripts/lsd.sh install

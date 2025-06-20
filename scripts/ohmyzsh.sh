@@ -12,10 +12,8 @@ ZSH_CUSTOM="${ZSH}/custom"
 declare -A ZSH_CUSTOM_PLUGINS=(
 	["plugins/F-Sy-H"]="https://github.com/z-shell/F-Sy-H"
 	["plugins/fzf-tab"]="https://github.com/Aloxaf/fzf-tab"
-	["plugins/you-should-use"]="https://github.com/MichaelAquilina/zsh-you-should-use"
 	["plugins/zsh-autosuggestions"]="https://github.com/zsh-users/zsh-autosuggestions"
-	["plugins/zsh-completions"]="https://github.com/zsh-users/zsh-completions"
-	["plugins/zsh-direnv"]="https://github.com/ptavares/zsh-direnv"
+	# ["plugins/zsh-bat"]="https://github.com/fdellwing/zsh-bat"
 )
 
 do_install() {
@@ -43,6 +41,7 @@ do_configure() {
 
 	info "[ohmyzsh][configure] Create symlinks"
 	ln -fs "${DOTFILES_DIR}/zsh/aliases.zsh" "${ZSH_CUSTOM}/aliases.zsh"
+	ln -fs "${DOTFILES_DIR}/zsh/styles.zsh" "${ZSH_CUSTOM}/styles.zsh"
 	ln -fs "${DOTFILES_DIR}/zsh/zshrc" "${HOME}/.zshrc"
 	ln -fs "${DOTFILES_DIR}/zsh/zshenv" "${HOME}/.zshenv"
 	ln -fs "${DOTFILES_DIR}/zsh/zshopt" "${HOME}/.zshopt"

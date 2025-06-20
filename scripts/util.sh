@@ -24,23 +24,6 @@ is_installed() {
     fi
 }
 
-is_docker() {
-	if [ -f /.dockerenv ]; then
-		return 0  # True
-	fi
-	return 1  # False
-}
-
-is_wsl() {
-	if [[ "$USER" == "test" && "$HOSTNAME" == "docker" ]]; then
-		return 1 #  False
-	fi
-	if [[ "$(uname -r)" == *"WSL"* ]]; then
-		return 0  # True
-	fi
-	return 1  # False
-}
-
 download() {
 	local src=$1
 	local dest=$2

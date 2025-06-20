@@ -10,16 +10,14 @@ source "${DOTFILES_DIR}/scripts/util.sh"
 
 function main() {
 	system
-	if ! is_wsl ; then
-		snap_packages
-	fi
+	snap_packages
 	omz
 }
 
 function system() {
 	local funcname="${FUNCNAME[0]}"
 	sudo apt-get check >/dev/null
-	
+
 	info "[${funcname}] Retrieve new lists of packages"
 	sudo apt-get update -qq
 

@@ -13,7 +13,6 @@ format = """
 [](#9A348E)\
 $shell\
 $os\
-$username\
 [](fg:#9A348E bg:green)\
 $battery\
 [](fg:green bg:#DA627D)\
@@ -34,6 +33,13 @@ $time\
 $container\
 [ ](fg:#384d54)\
 """
+# "" (U+E0B6): esquina izquierda
+# "" (U+E0B4): esquina derecha
+# "" (U+E0B0): separador derecho
+# "" (U+E0B2): separador izquierdo
+
+# Set color palette
+# palette = ''
 
 # Battery alarm
 # ----------------------------
@@ -77,7 +83,7 @@ format = "[ $path$read_only ]($style)"
 read_only = " "
 truncation_length = 4
 truncation_symbol = "…/"
-truncate_to_repo = false
+truncate_to_repo = true
 
 [directory.substitutions]
 "Documents" = "󰈙"

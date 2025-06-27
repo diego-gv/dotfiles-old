@@ -1,8 +1,9 @@
-[include]
-  	path = ~/.gitconfig-personal
+[user]
+	name = diego.gvidal
+	email = diego.gvidal@babelgroup.com
 
-[includeIf "gitdir:~/workspace/"]
-  	path = ~/.gitconfig-workspace
+[includeIf "gitdir:/home/diegogvidal/personal"]
+  	path = ~/.gitconfig-personal
 
 [credential]
     helper = store

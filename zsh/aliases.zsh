@@ -37,3 +37,8 @@ alias grepi="grep -i"
 
 # Update
 alias up="${HOME}/dotfiles/scripts/update.sh"
+
+# Clear RAM cache
+alias clear-cache="sudo sh -c 'echo 3 > /proc/sys/vm/drop_caches'"
+alias clear-ram="sudo sysctl -w vm.drop_caches=3"
+
